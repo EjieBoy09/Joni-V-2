@@ -7,7 +7,6 @@
     --tertiary-color: #CCEDED;
     --white-color: #ffffff;
 
-
     /* =============== FONTS =============== */
     --big-font-size: 2.5rem;
     --h1-font-size: 2rem;
@@ -53,12 +52,12 @@ body,
 button,
 input,
 textarea {
-    font-family: var(--body-font);
+    font-family: 'Gill Sans MT', sans-serif; /* Updated font */
     font-size: var(--normal-font-size);
+    letter-spacing: 0.3em; /* Set letter spacing to 30% */
 }
 
 body {
-
     margin: 0;
     padding: 0;
     background-color: var(--main-background);
@@ -134,51 +133,51 @@ img {
 
 /* ================= Navigation ================= */
 
-.header {
-    background-color: var(--primary-color); 
-    height: var(--header-height); /* Use the defined height */
-    display: flex; /* Flexbox for alignment */
-    align-items: center; /* Center items vertically */
-    padding: 0 20px; /* Add horizontal padding */
+.header { 
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .header__content {
     background-color: var(--primary-color);
-    display: flex; /* Flex container for content */
-    justify-content: space-between; /* Space between title and navigation */
-    width: 100%; /* Full width */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .title__name {
-    color: var(--tertiary-color); /* Change title color */
-    font-size: var(--h2-font-size); /* Ensure font size matches */
+    color: var(--tertiary-color);
+    font-size: var(--h3-font-size);
 }
 
 .nav__con {
-    display: flex; /* Flexbox for the navigation */
+    display: flex;
+    justify-content: flex-end; /* Align nav__list to the right */
+    flex-grow: 1; /* Allow nav__con to take available space */
 }
 
 .nav__list {
-    display: flex; /* Horizontal list */
+    display: flex;
 }
 
 .nav__item {
-    margin-left: 20px; /* Space between nav items */
+    margin-left: 20px;
 }
 
 .nav__link {
-    color: var(--tertiary-color); /* Text color for links */
-    font-size: var(--normal-font-size); /* Font size */
-    padding: 10px; /* Add padding */
+    color: var(--tertiary-color);
+    font-size: var(--normal-font-size);
+    padding: 10px;
 }
 
 .nav__link.active {
-    font-weight: var(--font-semi-bold); /* Bold active link */
-    text-decoration: underline; /* Underline active link */
+    font-weight: var(--font-semi-bold);
+    text-decoration: underline;
 }
 
-/* Add hover effect to links */
 .nav__link:hover {
-    color: var(--white-color); /* Change color on hover */
-    transition: color 0.3s; /* Smooth transition */
+    color: var(--white-color);
+    transition: color 0.3s;
 }
