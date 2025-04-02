@@ -2,12 +2,10 @@
     --header-height: 4.5rem;
 
     /* =============== COLOR PALLETS =============== */
-    --primary-color: #00A8CC;
-    --secondary-color: #b2f2ff;
-    --tertiary-color: #d1c7bc;
+    --primary-color: #042D36;
+    --secondary-color: #0E6578;
+    --tertiary-color: #CCEDED;
     --white-color: #ffffff;
-    --dark-blue-color: #072D44;
-    --main-background:#ffff;
 
 
     /* =============== FONTS =============== */
@@ -132,4 +130,54 @@ img {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+/* ================= Navigation ================= */
+
+.header {
+    background-color: var(--primary-color); /* Match the header background color */
+    height: var(--header-height); /* Use the defined height */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    padding: 0 20px; /* Add horizontal padding */
+}
+
+.header__content {
+    display: flex; /* Flex container for content */
+    justify-content: space-between; /* Space between title and navigation */
+    width: 100%; /* Full width */
+}
+
+.title__name {
+    color: var(--tertiary-color); /* Change title color */
+    font-size: var(--h2-font-size); /* Ensure font size matches */
+}
+
+.nav__con {
+    display: flex; /* Flexbox for the navigation */
+}
+
+.nav__list {
+    display: flex; /* Horizontal list */
+}
+
+.nav__item {
+    margin-left: 20px; /* Space between nav items */
+}
+
+.nav__link {
+    color: var(--tertiary-color); /* Text color for links */
+    font-size: var(--normal-font-size); /* Font size */
+    padding: 10px; /* Add padding */
+}
+
+.nav__link.active {
+    font-weight: var(--font-semi-bold); /* Bold active link */
+    text-decoration: underline; /* Underline active link */
+}
+
+/* Add hover effect to links */
+.nav__link:hover {
+    color: var(--white-color); /* Change color on hover */
+    transition: color 0.3s; /* Smooth transition */
 }
