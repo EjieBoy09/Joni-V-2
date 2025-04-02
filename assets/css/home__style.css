@@ -135,7 +135,7 @@ img {
 /* ================= Navigation ================= */
 
 .header {
-    background-color: var(--primary-color); /* Match the header background color */
+    background-color: var(--primary-color); 
     height: var(--header-height); /* Use the defined height */
     display: flex; /* Flexbox for alignment */
     align-items: center; /* Center items vertically */
