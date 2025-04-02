@@ -143,6 +143,7 @@ img {
 }
 
 .header__content {
+    background-color: var(--primary-color);
     display: flex; /* Flex container for content */
     justify-content: space-between; /* Space between title and navigation */
     width: 100%; /* Full width */
