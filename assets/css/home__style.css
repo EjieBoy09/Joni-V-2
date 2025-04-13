@@ -5,6 +5,7 @@
     --primary-color: #042D36;
     --secondary-color: #0E6578;
     --tertiary-color: #CCEDED;
+    --fourth: #9AE2E1;
     --white-color: #ffffff;
 
     /* =============== FONTS =============== */
@@ -132,52 +133,84 @@ img {
 }
 
 /* ================= Navigation ================= */
-
 .header { 
     height: var(--header-height);
     display: flex;
     align-items: center;
     padding: 0 20px;
+    background-color: var(--secondary-color);
 }
 
 .header__content {
-    background-color: var(--primary-color);
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-between; 
     width: 100%;
 }
 
+.logo {
+    height: 40px;
+    margin-right: 10px;
+    background-color: transparent;
+}
+
 .title__name {
-    color: var(--tertiary-color);
+    color: var(--white-color);
     font-size: var(--h3-font-size);
+    margin-right: auto; 
 }
 
 .nav__con {
-    display: flex;
-    justify-content: flex-end; /* Align nav__list to the right */
-    flex-grow: 1; /* Allow nav__con to take available space */
+    display: flex; 
+    align-items: center; 
 }
 
 .nav__list {
-    display: flex;
+    display: flex; 
+    align-items: center; 
 }
 
 .nav__item {
-    margin-left: 20px;
+    margin-left: 20px; 
 }
 
 .nav__link {
-    color: var(--tertiary-color);
+    color: var(--white-color);
     font-size: var(--normal-font-size);
     padding: 10px;
+    transition: color 0.3s;
 }
 
 .nav__link.active {
     font-weight: var(--font-semi-bold);
-    text-decoration: underline;
+    color: var(--fourth);
 }
 
 .nav__link:hover {
+    color: var(--fourth);
+}
+
+/* ================= Home ================= */
+.home {
+background-image: url(../Images/Home\ Section.jpg);
+background-size: cover;
+background-position: center;
+height: 95vh;
+padding: 3.5rem 0;
+position: relative;
+color: var(--white-color);
+}
+
+.home__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 95vh;
+    padding: 0 20px;
+}
+
+.home__title {
     color: var(--white-color);
-    transition: color 0.3s;
+    font-size: 3.5rem;
 }
