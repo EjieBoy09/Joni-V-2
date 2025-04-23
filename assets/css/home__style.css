@@ -53,9 +53,9 @@ body,
 button,
 input,
 textarea {
-    font-family: 'Gill Sans MT', sans-serif; /* Updated font */
+    font-family: 'Gill Sans MT', sans-serif; 
     font-size: var(--normal-font-size);
-    letter-spacing: 0.3em; /* Set letter spacing to 30% */
+    letter-spacing: 0.3em; 
 }
 
 body {
@@ -133,8 +133,143 @@ img {
 }
 
 /* ================= Navigation ================= */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic&display=swap');
+
+:root {
+    /* =============== COLOR PALLETS =============== */
+    --primary-color: #042D36; /* Dark Blue Color */
+    --secondary-color: #0E6578; /* Medium Dark Blue */
+    --tertiary-color: #9AE2E1; /* Light Blue */
+    --quaternary-color: #1CAACA; /* Mid Blue */
+    --white-color: #ffffff;
+
+    /* =============== TYPOGRAPHY =============== */
+    --title-font: "Roboto", sans-serif;
+    --body-font: "Special Gothic", sans-serif; 
+    --big-font-size: 2.5rem;
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /* =============== FONTS WEIGHTS =============== */
+    --font-thin: 100;
+    --font-small: 300;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /* =============== MARGIN BOTTOM =============== */
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+
+    /* =============== Z-INDEX =============== */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+button,
+input,
+textarea {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-background);
+    color: var(--primary-color);
+    transition: .4s;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+h1, h2, h3 {
+    color: var(--tertiary-color);
+    font-weight: var(--font-semi-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========  REUSABLE CODES  ========= */
+.section {
+    padding: 3.5rem 0 1rem;
+}
+
+.section__title,
+.section__title-center {
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-1-5);
+    line-height: 140%;
+}
+
+.section__title-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 980px;
+    margin-left: var(--mb-0-75);
+    margin-right: var(--mb-0-75);
+}
+
+.grid {
+    display: grid;
+}
+
+.main {
+    overflow: hidden;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* =========  HEADER  ========= */
 .header { 
-    height: var(--header-height);
+    height: 4.5rem;
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -144,19 +279,21 @@ img {
 .header__content {
     display: flex;
     align-items: center;
+    align-content: center;
     justify-content: space-between; 
     width: 100%;
 }
 
-.logo {
+.logo img{
     height: 40px;
     margin-right: 10px;
     background-color: transparent;
 }
 
-.title__name {
+.nav__title {
     color: var(--white-color);
-    font-size: var(--h3-font-size);
+    font-size: var(--h2-font-size);
+    letter-spacing: 1.5px;
     margin-right: auto; 
 }
 
@@ -171,6 +308,8 @@ img {
 }
 
 .nav__item {
+    font-family : var(--title-font);
+    letter-spacing: 3px;
     margin-left: 20px; 
 }
 
@@ -182,12 +321,74 @@ img {
 }
 
 .nav__link.active {
-    font-weight: var(--font-semi-bold);
-    color: var(--fourth);
+    color: var(--tertiary-color);
 }
 
 .nav__link:hover {
-    color: var(--fourth);
+    color: var(--tertiary-color);
+}
+
+/* =========  HOME  ========= */
+.home {
+    align-content: center;
+    padding-left: 5rem;
+    margin: 0;
+    height: 89.6vh;
+    background-image: url(../media/Home\ Section.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.home__title {
+    color: var(--white-color);
+    font-size: 3rem;
+    font-weight: var(--font-semi-bold);
+    margin-bottom: var(--mb-0-2);
+}
+
+.home__description {
+    color: var(--white-color);
+    font-size: 18px;
+    margin-bottom: var(--mb-1);
+}
+
+.home__btn {
+    color: var(--white-color);
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+
+footer {
+    color: var(--tertiary-color);
+    background-color: var(--secondary-color);
+    padding: 10px;
+    align-self: center;
+    align-content: center;
+}
+
+/* =========  MEDIA QUERY  ========= */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .nav__list {
+        flex-direction: column;
+    }
+
+    .nav__item {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .section {
+        padding: 2rem 0;
+    }
 }
 
 /* ================= Home ================= */
@@ -201,16 +402,3 @@ position: relative;
 color: var(--white-color);
 }
 
-.home__section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 95vh;
-    padding: 0 20px;
-}
-
-.home__title {
-    color: var(--white-color);
-    font-size: 3.5rem;
-}
