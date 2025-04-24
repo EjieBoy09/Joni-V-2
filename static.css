@@ -1,0 +1,381 @@
+:root {
+    --font-family: 'Arial, sans-serif';
+
+    /* Colors */
+    --primary-color: #0E6578;
+    --secondary-color: #9EB7B6;
+    --primary-light-color: white;
+    --text-color: black;
+    --secondary-text-color: white;
+    --border-color: #b3dcd2;
+
+
+    /* button size */
+    
+    --button-padding: 15px 17px; /* medium button */
+
+
+    /* font size */
+    --subtitle-font-size: 1.5rem;
+    --main-title-font-size: 2.5rem;
+    --p-font-size: 1.1rem;
+    --h1-font-size: 2.2rem;
+    --h2-font-size: 2.5rem;
+    --h3-font-size: 1.3rem;
+    --h5-font-size: 1.1rem;
+    --pre-font-size: 1.1rem;
+}
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body 
+{
+    font-family: var(--font-family);
+}
+
+/* ================== Header Styles ================== */
+
+.header 
+{
+    width: 100%;
+    
+    background-image: url('image/header1');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.logo-container 
+{
+    position: absolute;
+    top: 25px;
+    left: 40px;
+
+    display: flex;
+    align-items: center;
+}
+
+.logo 
+{
+    width: 90px;
+    height: auto;
+}
+
+.text-logo 
+{
+    margin-left: 15px; 
+    font-size: 24px; 
+    color: var(--primary-color); 
+}
+.apointment_section h1 span {
+    color: var(--primary-color);
+}
+
+
+/* ================== Apointment Section ================== */
+
+.apointment 
+{
+    height: 120vh;
+    display: flex;
+    justify-content: flex;
+    align-items: center;
+    text-align: initial;
+    color: var(--text-color);
+    position: relative;
+    left: 5vh;
+}
+
+button 
+{
+    background: var(--primary-color);
+    border: none;
+    padding: var(--button-padding);
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* ================== About Content Styles ================== */
+
+.about 
+{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    
+}
+
+.about-content-image 
+{
+    flex: 1; 
+    max-width: 100%; 
+    margin-top: 10vh;
+}
+
+.images 
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 200vw; 
+    flex-shrink: 0;
+}
+
+.images img 
+{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.images img:nth-child(1),
+.images img:nth-child(3) 
+{
+    margin-top: 40px;
+}
+
+
+.about-content-text-wrapper 
+{
+    flex: 1;
+    max-width: 60%; 
+    display: flex;
+    flex-direction: column;
+    margin-top: 17vh;
+
+}
+.subtitle 
+{
+    font-size: var(--subtitle-font-size);
+    color: var(--secondary-color);
+    padding-left: 10vh;
+    
+}
+
+.main-title 
+{
+    font-size: var(--main-title-font-size);
+    font-weight: bold;
+    color: var(--primary-color);
+    padding-left: 10vh;
+    margin-bottom: 30px;
+}
+
+
+.about-text pre 
+{
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0;
+    font-family: var(--font-family);
+    padding-right: 50px;
+}
+
+
+/* ================== Services content Styles ================== */
+  
+  section.services 
+  {
+    padding: 40px 80px;
+    margin-top: 35px;
+  }
+  
+  .services h5 
+  {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: var(--h5-font-size);
+    font-weight: 600;
+  }
+  
+  .services h2 
+  {
+    font-size: var(--h2-font-size);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+  }
+  
+  .cards-container 
+  {
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+  }
+  
+  .card 
+  {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    padding: 150px 40px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card:hover 
+  {
+    transform: translateY(-5px);
+  }
+  
+  .card .icon 
+  {
+    width: 120px;
+    height: 120px;
+    background-color: #ccc;
+    border-radius: 8px;
+    margin-bottom: 100px;
+  }
+  
+  .card h3 
+  {
+    margin: 0 0 15px;
+    font-size: var(--h3-font-size);
+    color: var(--primary-light-color);
+  }
+  
+  .card p 
+  {
+    font-size: var(--p-font-size);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #e0f0ef;
+  }
+  
+  .card button 
+  {
+    background-color: transparent;
+    color: var(--primary-light-color);
+    border: 1px solid var(--border-color);
+    padding: var(--button-padding);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .card button:hover 
+  {
+    background-color: #b3dcd2;
+    color: #004f57;
+  }
+
+
+  /* ================== Team Content Styles ================== */
+
+  .team-container 
+  {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   padding: 150px 70px;
+   min-height: 100vh;
+   top: 50px;   
+  }
+
+  .text-box {
+    background-color: #176b7d;
+    padding: 30px 40px;
+    border-radius: 20px;
+    max-width: 65vh;
+    flex: 1;
+    margin-top: 40px;
+  }
+  
+  .text-box h1 {
+    font-size: var(--h1-font-size);
+    margin-bottom: 20px;
+    padding: 0 90px;
+    color: var(--secondary-text-color);
+  }
+  
+  .text-box pre {
+    font-size: var(--pre-font-size);
+    line-height: 1.6;
+    color: #d8f3f2;
+    font-family: var(--font-family);
+  }
+
+  .team-image-box 
+  {
+    padding: 0 70px;
+    flex: 1;
+  
+    
+  }
+
+  .team-image-box img 
+  {
+    width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+  }
+
+
+                 /*======================Footer content ==========================*/
+
+
+.footer {
+  background-color: var(--primary-color);
+  color: var(--primary-light-color);
+  padding: 40px 0;
+  font-family: var(--font-family);
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 40px;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+  margin: 20px 0;
+}
+
+.footer-section h3 {
+  font-size: var(--h3-font-size);
+  margin-bottom: 20px;
+}
+
+.footer-section p {
+  font-size: var(--p-font-size);
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: var(--primary-light-color);
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  font-style: italic;
+  max-width: 300px;
+  margin-bottom: 10px;
+}
