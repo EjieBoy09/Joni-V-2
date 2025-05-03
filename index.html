@@ -3,117 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joni Villanueva General Hospital | Medical Care</title>
 
-    <!-- ============= FAVICON ============= -->
-    <link rel="shortcut icon" href="assets/media/Hospital Logo.png" type="image/x-icon">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/media/Hospital Logo.png" type="image/png">
 
-    <!-- ============= TAILWIND ============= -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!--=============== TAILWIND CDN ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
 
-    <!-- ============= STYLESHEET ============= -->
+    <!--=============== FONT AWESOME CDN ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- =============== STYLESHEET =============== -->
     <link rel="stylesheet" href=".//assets/css/home__style.css">
+
+    <title>JVGH Patient Portal</title>
 </head>
 <body>
-    <!-- ============= HEADER SECTION ============= -->
-    <header class="header">
-        <div class="header__content">
-            <div class="logo">
-                <img src="assets/media/Hospital Logo.png" alt="Logo">
+    <div id="app">
+        <!-- =============== NAVIGATION =============== -->
+        <header class="header flex items-center justify-between bg-secondary-color">
+            <div class="hospital__logo flex items-center">
+                <img src="assets/media/Hospital Logo.png" alt="Hospital Logo" class="w-12 h-auto mr-2">
+                <h3 class="hospital__name">JVGH Patient Portal</h3>
             </div>
-            <div class="nav__title">Joni Villanueva General Hospital</div>
-            <nav class="nav__con">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Services</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Doctor</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">About Us</a></li>
-                </ul>
+
+            <nav class="nav">
+                <div class="nav__con" :class="{'flex': isOpen, 'hidden': !isOpen}">
+                    <button @click="toggleMenu" class="close-btn" v-if="isOpen">X</button>
+                    <ul class="nav__list" :class="{'flex': isOpen, 'hidden': !isOpen}">
+                        <li class="nav__item"><a href="#" class="nav__link active">HOME</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">ABOUT US</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">APPOINTMENT</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">FIND A DOCTOR</a></li>
+                    </ul>
+                </div>
             </nav>
-        </div>
-    </header>
 
-    <!-- ============= MAIN ============= -->
-    <main class="main">
-        <!-- ============= HOME SECTION ============= -->
-        <section class="home">
-            <div class="container">
-                <h1 class="home__title"><b>Don’t Let  Your Health<br> Take a Backseat!</b></h1>
-                <p class="home__description">Fill out the appointment form below to schedule a <br>consultation with one of our healthcare professionals.</p>
-                <button class="home__btn">Make Appointment!</button>
-            </div>
-        </section>
-        
-        <!-- ============= SERVICE CARD SECTION ============= -->
-        <section class="explore__service">
-            <div class="container">
-                <p class="explore__description">Your Partner in Health, Every Step of the Way</p>
-                <h1 class="explore__title">Explore Our Departments</h1>
+            <!-- Hamburger Icon -->
+            <button @click="toggleMenu" class="hamburger md:hidden">
+                <i class="fas fa-bars"></i>
+            </button>
+        </header>
 
-                <div class="explore__content">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                                    <!-- Card 1 -->
-                                    <div class="service-card">
-                                        <img src="assets/media/service_image.jpg" alt="Service Image" class="service-image">
-                                        <div class="service-content">
-                                            <h2 class="service-title">Obstetrician</h2>
-                                            <p class="service-description">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                                            </p>
-                                            <button class="btn">Read More</button>
-                                        </div>
-                                    </div>
-                                    <!-- Card 2 -->
-                                    <div class="service-card">
-                                        <img src="assets/media/service_image.jpg" alt="Service Image" class="service-image">
-                                        <div class="service-content">
-                                            <h2 class="service-title">Psychology</h2>
-                                            <p class="service-description">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                                            </p>
-                                            <button class="btn">Read More</button>
-                                        </div>
-                                    </div>
-                                    <!-- Card 3 -->
-                                    <div class="service-card">
-                                        <img src="assets/media/service_image.jpg" alt="Service Image" class="service-image">
-                                        <div class="service-content">
-                                            <h2 class="service-title">Orthopedic</h2>
-                                            <p class="service-description">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                                            </p>
-                                            <button class="btn">Read More</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <!-- =============== MAIN =============== -->
+        <main class="main">
+            <!-- =============== HOME =============== -->
+            <section class="home">
+                <div class="home__con container">
+                    <div class="home__content"> 
+                        <h1 class="home__title">Don't Let Your Health<br>Take a Break!</h1>
+                        <p class="home__subTitle">Stay on top of your health with easy scheduling and timely reminders.</p>
+                        <button type="button" class="btn bg-primary-color text-white py-2 px-4 rounded hover:bg-quaternary-color transition duration-300">Make Appointment</button>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-        <!-- ============= APPOINTMENT SECTION ============= -->
-        <section class="appointment" id="appointment">
-            <div class="container">
-                <div class="appointment__con">
-                    <h1 class="appointment__title">Make your Appointment</h1>
-                    <form action="" class="appointment__form">
-                        
-                    </form>
+            </section>
+
+            <!-- =============== DEPARTMENTS =============== -->
+            <section class="departments">
+                <div class="dept__con container">
+                    <p class="dept__subTitle">Your Partner in Health, Every Step of the Way</p>
+                    <h2 class="dept__title">Explore our Department</h2>
+
+                    <div class="grid grid-cols-3 gap-4 mt-8">
+                        <div class="dept-card p-4 bg-white rounded-lg shadow-md flex flex-col justify-between">
+                            <div class="flex items-center">
+                                <i class="fas fa-heartbeat text-3xl text-secondary-color"></i>
+                                <div class="ml-4">
+                                    <h3 class="dept-name">Cardiology Department</h3>
+                                    <p class="dept-description">Heart and blood vessel health.</p>
+                                </div>
+                            </div>
+                            <button class="read-more flex items-center justify-end mt-4">
+                                Read More!
+                            </button>
+                        </div>
+                        <div class="dept-card p-4 bg-white rounded-lg shadow-md flex flex-col justify-between">
+                            <div class="flex items-center">
+                            <i class="fa-solid fa-bone"></i>
+                                <div class="ml-4">
+                                    <h3 class="dept-name">Orthopedic Department</h3>
+                                    <p class="dept-description">Heart and blood vessel health.</p>
+                                </div>
+                            </div>
+                            <button class="read-more flex items-center justify-end mt-4">
+                                Read More!
+                            </button>
+                        </div>
+                        <div class="dept-card p-4 bg-white rounded-lg shadow-md flex flex-col justify-between">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-child text-3xl text-secondary-color"></i>
+                                <div class="ml-4">
+                                    <h3 class="dept-name">Pediatrics</h3>
+                                    <p class="dept-description">Heart and blood vessel health.</p>
+                                </div>
+                            </div>
+                            <button class="read-more flex items-center justify-end mt-4">
+                                Read More!
+                            </button>
+                        </div>
+                        <div class="dept-card p-4 bg-white rounded-lg shadow-md flex flex-col justify-between">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-disease text-3xl text-secondary-color"></i>
+                                <div class="ml-4">
+                                    <h3 class="dept-name">Oncology</h3>
+                                    <p class="dept-description">Heart and blood vessel health.</p>
+                                </div>
+                            </div>
+                            <button class="read-more flex items-center justify-end mt-4">
+                                Read More!
+                            </button>
+                        </div>
+                        <div class="dept-card p-4 bg-white rounded-lg shadow-md flex flex-col justify-between">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-brain text-3xl text-secondary-color"></i>
+                                <div class="ml-4">
+                                    <h3 class="dept-name">Neurology</h3>
+                                    <p class="dept-description">Heart and blood vessel health.</p>
+                                </div>
+                            </div>
+                            <button class="read-more flex items-center justify-end mt-4">
+                                Read More!
+                            </button>
+                        </div>
+                        <div class="dept-card p-4 bg-white rounded-lg shadow-md flex flex-col justify-between">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-stethoscope text-3xl text-secondary-color"></i>
+                                <div class="ml-4">
+                                    <h3 class="dept-name">Surgery</h3>
+                                    <p class="dept-description">Heart and blood vessel health.</p>
+                                </div>
+                            </div>
+                            <button class="read-more flex items-center justify-end mt-4">
+                                Read More!
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- =============== SIGN IN / SIGN OUT =============== -->
+        <section class="account">
+            <div class="account__con container">
+                <div class="form__box">
+                    
                 </div>
             </div>
         </section>
-    </main>
+    </div>
 
-    <script src=".//assets/js/main.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Vue 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="assets/js/main.vue"></script>
 </body>
 </html>
